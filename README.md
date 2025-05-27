@@ -1,5 +1,1 @@
-# eshanneog.github.io
-# Eshan Neog
-# Eneog@my.waketech.edu
-# this is for my wake tech courses
-# I will add assignments to this file
+# eshanneog.github.io, Eshan Neog, eneog@my.waketech.edu, This is for my Wake Tech course. I will add all of my assignments here. 
