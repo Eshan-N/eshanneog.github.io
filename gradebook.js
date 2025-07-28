@@ -1,11 +1,18 @@
 function fetchGradeData() {
-  console.log("Fetching grade data...");
-}
+    console.log("Fetching grade data...");
+    let xhr = new XMLHttpRequest();
+    let apiRoute = "/api/grades";
 
-function populateGradebook(data) {
-  console.log("Populating gradebook with:", data);
-}
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === xhr.DONE) {
+            if (xhr.status !== 200) {
+                console.error(`Could not get grades. Status: ${xhr.status}`);
+                return;
+            }
+            populateGradebook(JSON.parse(xhr.responseText));
+        }
+    };
 
-// Just for testing that functions are triggered
-fetchGradeData();
-populateGradebook([]);
+    xhr.open("GET", apiRoute, true);
+    xhr.send();
+}
